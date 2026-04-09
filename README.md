@@ -42,12 +42,27 @@ Je suis **Personne 1 - The Watcher**. Mon rôle est de construire le système de
 
 Fichier : `rules/security_rules.yaml`
 
+C'est quoi une règle YAML ?
+Une règle YAML est une instruction que tu donnes au système pour lui dire : "Voici ce qui est suspect, surveille ça et préviens-moi si ça arrive."
+
+En termes simples : C'est comme une liste de vérification pour un vigile. Tu lui dis : "Si tu vois quelqu'un essayer d'ouvrir la porte 5 fois sans succès, appelle-moi."
+
+
 | Règle | Pattern | Seuil | Sévérité |
 |-------|---------|-------|----------|
 | brute_force_attack | "Failed password" | 5 en 60s | Critique |
 | suspicious_sudo | "sudo.*FAILED" | 3 en 300s | Élevée |
 | invalid_user | "Invalid user" | 3 en 60s | Élevée |
 | root_access | "Accepted.*root" | 1 | Critique |
+
+par exemple: 
+rules:
+  - name: brute_force_attack
+    pattern: "Failed password"
+    severity: critical
+    threshold: 5 #Le nombre de fois que le motif doit apparaître avant de déclencher l'alerte
+    time_window: 60 # La durée (en secondes) pendant laquelle on compte les occurrences
+    action: alert
 
 ### 5. Dashboard React
 
@@ -126,6 +141,13 @@ Dans le panneau **LOG ANALYSIS** :
 
 ## Résumé des fonctionnalités du dashboard
 
+- Voir l'état des connexions (blockchain/SSH)
+- Récupérer les logs
+- Voir les alertes en temps réel (rouge = critique)
+- Stocker les hashes sur blockchain
+- Vérifier l'intégrité des logs
+- Simuler des attaques
+- Exporter les logs en JSON
 
 <img width="1529" height="765" alt="image" src="https://github.com/user-attachments/assets/e4d9b0bf-f905-44fc-ae7f-c6dd6108b926" />
 
