@@ -32,10 +32,9 @@ Je suis **Personne 1 - The Watcher**. Mon rôle est de construire le système de
 
 | Script | Fonction | Performance |
 |--------|----------|-------------|
-| `hash_log.py` | Calcule le hash SHA-256 d'un fichier | 0.0006s pour 100K lignes |
+| `hash_log.py` | Calcule le hash SHA-256 d'un fichier |  |
 | `encrypt_logs.py` | Chiffrement AES-256 des logs | Clé générée automatiquement |
 | `incident_detector.py` | Détection d'incidents en temps réel | 4 règles actives |
-| `alert_manager.py` | Gestion et stockage des alertes | Stockage JSON |
 | `final_verification.py` | Vérification complète du système | Teste SSH + blockchain |
 
 ### 4. Règles de détection YAML
@@ -69,8 +68,8 @@ rules:
 - Interface utilisateur complète
 - Affichage des logs en temps réel
 - Panneau d'alertes intégré
-- Connexion SSH simulée (prête pour intégration)
-- Connexion blockchain simulée (prête pour intégration)
+- Connexion SSH simulée 
+- Connexion blockchain simulée 
 
 ### 6. Configuration SSH
 
@@ -139,17 +138,5 @@ Dans le panneau **LOG ANALYSIS** :
 
 ---
 
-## Résumé des fonctionnalités du dashboard
 
-- Voir l'état des connexions (blockchain/SSH)
-- Récupérer les logs
-- Voir les alertes en temps réel (rouge = critique)
-- Stocker les hashes sur blockchain
-- Vérifier l'intégrité des logs
-- Simuler des attaques
-- Exporter les logs en JSON
-
-<img width="1529" height="765" alt="image" src="https://github.com/user-attachments/assets/e4d9b0bf-f905-44fc-ae7f-c6dd6108b926" />
-
-<img width="1498" height="706" alt="image" src="https://github.com/user-attachments/assets/57453484-387f-4964-8f55-68534db5cf2e" />
 
